@@ -58,3 +58,29 @@ $ ./proyecto prueba.txt
 Y finalmente nos devolverá el resultado.  
 
 ![Alt Text](https://github.com/terceranexus6/proyecto_lex/blob/master/photo_2016-11-12_17-59-21.jpg)
+
+## Por programar:
+Aún está en proceso. Pretendo añadir una norma para analizar los protocolos y los tipos de paquetes.  
+
+## Extra: Concepto de Sniffing, tipos de paquetes y Protocolos. 
+
+##1.Sniffing
+Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. Ésto es “escuchar” las diversas comunicaciones que se establecen entre ordenadores a través de una red (física o inalámbrica) sin necesidad de acceder física ni virtualmente a su ordenador.
+
+##2.Paquetes 
+Los tipos de paquetes posibles son:
+S = SYN (petición de conexión)
+A = ACK (anterior paquete recibido)
+P = PUSH 
+R = RESET (conexión cortada abruptamente)
+F = FIN (conexión cortada de forma normal)
+U = URGENT 
+
+##3.Protocolos
+Encontraremos dos protocolos: TCP y UDP
+
+1. UDP
+>UDP es un protocolo no orientado a conexión. Es decir cuando una maquina A envía paquetes a una maquina B, el flujo es unidireccional.
+
+2. TCP
+>Contrariamente a UDP, el protocolo TCP está orientado a conexión. Cuando una máquina A envía datos a una máquina B, la máquina B es informada de la llegada de datos, y confirma su buena recepción.
