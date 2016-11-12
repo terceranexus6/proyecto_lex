@@ -1,5 +1,5 @@
 # Proyecto de Lex para la asignatura de MC de 2GII
-###### Con esteanalizador pretendo hacer un estudio sobre los datos que se recogen en un sniffing básico de Ettercap
+###### Con este analizador pretendo hacer un estudio sobre los datos que se recogen en un sniffing básico de Ettercap
 
 ##1. Ettercap
 
@@ -56,3 +56,5 @@ $ ./proyecto prueba.txt
 ```
 
 Y finalmente nos devolverá el resultado.  
+
+![Alt Text](https://github.com/terceranexus6/proyecto_lex/blob/master/photo_2016-11-12_17-59-21.jpg)
