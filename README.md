@@ -1,4 +1,4 @@
-# Proyecto de Lex para la asignatura de MC de 2GII
+# Proyecto de Lex para la asignatura de MC de 3GII
 ###### Con este analizador pretendo hacer un estudio sobre los datos que se recogen en un sniffing básico de Ettercap
 
 ##1. Ettercap
