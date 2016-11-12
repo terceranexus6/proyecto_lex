@@ -3,9 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 
-char **fechas, **ip, **mac;
 
-int tfechas, tip, tmac;
+char **fechas, **ip, **mac, **copia;
+
+int tfechas, tip, tmac, cfechas, cip, cmac;
 
 void guardar_datos(int num_expresion);
 void escribir_datos(int num_expresion);
@@ -13,16 +14,16 @@ void liberar_memoria();
 
 %}
 
-fecha		(0[1-9]|[1-2][0-9]|3[0-1])[-\/](0[1-9]|1[0-2])[-\/][0-9][0-9]
-id	[0-9][0-9][0-9][.][0-9][0-9][.][0-9][0-9][0-9][.][0-9][0-9]
-mac	[0-9][0-9][:][0-9][0-9][:][0-9][0-9][:][0-9][0-9][:][0-9][0-9][:][0-9][0-9]
-resto		[a-zA-Z0-9\n]+|[^a-zA-Z0-9\n]+
+fecha		 (0[1-9]|[1-2][0-9]|3[0-1])[-\/](0[1-9]|1[0-2])[-\/][0-9][0-9]
+ip	     [0-9][0-9][0-9][.][0-9][0-9][.][0-9][0-9][0-9][.][0-9][0-9]
+mac	     [0-9][0-9][:][0-9][0-9][:][0-9][0-9][:][0-9][0-9][:][0-9][0-9][:][0-9][0-9]
+resto		 [a-zA-Z0-9\n]+|[^a-zA-Z0-9\n]+
 
 %%
                  /*----- Seccion de Reglas ----------------*/
 
 {fecha}			{guardar_datos(1);}
-{id}		    {guardar_datos(2);}
+{ip}		    {guardar_datos(2);}
 {mac}	      {guardar_datos(3);}
 {resto}			{}
 
@@ -42,15 +43,15 @@ resto		[a-zA-Z0-9\n]+|[^a-zA-Z0-9\n]+
                 			cfechas++;
                 			break;
                 		case 2:
-                			if(cid>=10)
+                			if(cip>=10)
                       {
-                				tid+=(tid/2);
-                				copia=(char**)realloc(id,tid*sizeof(char*));
-                				id=copia;
+                				tip+=(tip/2);
+                				copia=(char**)realloc(ip,tip*sizeof(char*));
+                				ip=copia;
                 			}
-                			id[cid]=malloc(strlen(yytext)+1);
-                			strcpy(id[cid],yytext);
-                			cid++;
+                			ip[cip]=malloc(strlen(yytext)+1);
+                			strcpy(ip[cip],yytext);
+                			cip++;
                 			break;
                 		case 3:
                 			if(cmac>=10){
@@ -75,9 +76,9 @@ resto		[a-zA-Z0-9\n]+|[^a-zA-Z0-9\n]+
                 				printf("\t%s\n",fechas[i]);
                 		  	break;
                 		case 2:
-                			printf("\nID encontrados:\n");
-                			for (i=0;i<cid;i++)
-                				printf("\t%s\n",id[i]);
+                			printf("\nIP encontrados:\n");
+                			for (i=0;i<cip;i++)
+                				printf("\t%s\n",ip[i]);
                 		  	break;
                 		case 3:
                 			printf("\nMAC encontrados:\n");
@@ -93,15 +94,15 @@ resto		[a-zA-Z0-9\n]+|[^a-zA-Z0-9\n]+
                 	for (i=0;i<tfechas;i++)
                 		free(fechas[i]);
 
-                	for (i=0;i<tid;i++)
-                		free(id[i]);
+                	for (i=0;i<tip;i++)
+                		free(ip[i]);
 
                 	for (i=0;i<tmac;i++)
                 		free(mac[i]);
 
 
                 	free(fechas);
-                	free(id);
+                	free(ip);
                 	free(mac);
 
                 }
@@ -119,14 +120,14 @@ int main (int argc, char *argv[]){
   }
   else yyin = stdin;
 
-  tfechas=tid=tmac=10;
+  tfechas=tip=tmac=10;
 
   fechas=(char**)malloc(tfechas*sizeof(char*));
-  id=(char**)malloc(tid*sizeof(char*));
+  ip=(char**)malloc(tip*sizeof(char*));
   mac=(char**)malloc(tmac*sizeof(char*));
 
 
-  cfechas=cid=cmac=0;
+  cfechas=cip=cmac=0;
 
   yylex();
 
@@ -138,3 +139,7 @@ int main (int argc, char *argv[]){
 
   return 0;
 }
+
+           
+              
+
