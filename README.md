@@ -66,8 +66,8 @@ He añadido recientemente un script que realiza la captura y muestra el resultad
 $ sudo ./captura.sh
 ```
 
-## Por programar:
-Aún está en proceso. Pretendo añadir una norma para analizar los protocolos y los tipos de paquetes.  
+## Por depurar:
+Tengo algunos problemas para capturar los tipos de paquetes, y para capturar los protocolos que estén a principio de linea.
 
 ## Extra: Concepto de Sniffing, tipos de paquetes y Protocolos. 
 
