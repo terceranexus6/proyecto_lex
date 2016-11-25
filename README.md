@@ -57,7 +57,7 @@ $ ./proyecto prueba.txt
 
 Y finalmente nos devolverá el resultado.  
 
-![Alt Text](https://github.com/terceranexus6/proyecto_lex/blob/master/images/photo_2016-11-12_17-59-21.jpg)
+![Alt Text](https://github.com/terceranexus6/proyecto_lex/blob/master/images/photo_2016-11-25_11-12-43.jpg)
 
 ##NUEVO: SCRIPT
 He añadido recientemente un script que realiza la captura y muestra el resultado solo. 
