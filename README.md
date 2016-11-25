@@ -59,6 +59,13 @@ Y finalmente nos devolverá el resultado.
 
 ![Alt Text](https://github.com/terceranexus6/proyecto_lex/blob/master/images/photo_2016-11-12_17-59-21.jpg)
 
+##NUEVO: SCRIPT
+He añadido recientemente un script que realiza la captura y muestra el resultado solo. 
+
+```
+$ sudo ./captura.sh
+```
+
 ## Por programar:
 Aún está en proceso. Pretendo añadir una norma para analizar los protocolos y los tipos de paquetes.  
 
