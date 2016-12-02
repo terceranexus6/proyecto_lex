@@ -65,10 +65,12 @@ He añadido recientemente un script que realiza la captura y muestra el resultad
 ```
 $ sudo ./captura.sh
 ```
+También tenemos la opción de sniffeo rápido, para una catura más limitada de datos.
+``` 
+$ sudo ./sniffeo_rapido.sh
+``` 
 > IMPORTANTE: Para que funcione debe realizarse la compilación del código, y el ejecutable debe llamarse proyecto. (las dos primeras líneas de código del paso 3)
 
-## Por depurar:
-Tengo algunos problemas para capturar los tipos de paquetes, y para capturar los protocolos que estén a principio de linea.
 
 ## Extra: Concepto de Sniffing, tipos de paquetes y Protocolos. 
 
