@@ -79,17 +79,12 @@ Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. E
 ### 3.2. Paquetes
 Los tipos de paquetes posibles son:
 
-S = SYN (petición de conexión)
-
-A = ACK (anterior paquete recibido)
-
-P = PUSH
-
-R = RESET (conexión cortada abruptamente)
-
-F = FIN (conexión cortada de forma normal)
-
-U = URGENT
+| S | SYN (petición de conexión) |
+| A | ACK (anterior paquete recibido) |
+| P | PUSH |
+| R | RESET (conexión cortada abruptamente) |
+| F | FIN (conexión cortada de forma normal) |
+| U | URGENT |
 
 ### 3.3. Protocolos
 Encontraremos dos protocolos: TCP y UDP
