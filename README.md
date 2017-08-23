@@ -1,11 +1,9 @@
 # Proyecto de Lex para la asignatura de MC de 3GII
-###### Con este analizador pretendo hacer un estudio sobre los datos que se recogen en un sniffing básico de Ettercap
+###### Con este analizador pretendo hacer un estudio sobre los datos que se recogen en un sniffing básico de Ettercap.
 
-##1. Ettercap
+## 1. Instalando dependencias
 
-La aplicación está basada en datos volcados por la aplicación de Ettercap, un sniffer de código libre. Para descargarlo en linux usaremos:
-
-Instalar dependencias:
+La aplicación está basada en datos volcados por Ettercap, un sniffer de código libre. Para descargarlo en linux primero debemos instalar sus dependencias:
 ```
 # apt-get install build-essential libtool libnet-dev libncurses5-dev libssl-dev \
 libpcap-dev libgtk2.0-dev gawk flex bison checkinstall
@@ -17,76 +15,80 @@ $ wget http://prdownloads.sourceforge.net/ettercap/ettercap-0.7.4.1.tar.gz
 $ tar xvfz ./ettercap-0.7.4.1.tar.gz && cd ./ettercap
 ```
 
-Configurar
+Configurar:
 ```
 $ ./configure --enable-debug
 $ make
 ```
 
-Hacer un paquete deb
+Hacer un paquete deb:
 ```
 $ checkinstall -D --install=no --pkgname ettercap --pkgversion 0 --pkgrelease 7.4.1 \
 --maintainer "admin@example.com" --strip=no --stripso=no --addso=yes --nodoc
 ```
 
-Instalar
+Instalar:
 ```
 # dpkg -i ettercap_0-7.4.1_amd64.deb
 ```
 
-Ejecutar
+Ejecutar:
 ```
 $ ettercap -C
 ```
 
-##2.Volcar los datos en un .txt
-Usaremos los datos de ettercap que consigamos en un tiempo que queramos, para usamos la siguiente línea en una terminal:
+## 2. Ejecución
+### 2.1. Generación de datos
+Usaremos los datos de ettercap que consigamos durante el tiempo que queramos, para usamos la siguiente línea en una terminal:
 ```
 $ sudo ettercap -T -i wlan0 > prueba.txt
 ```
 
-##3.Usar prueba.txt para analizarlo
-Para ello debemos general un ejecutable con el codigo de extensión .l
+### 2.2. Compilación y análisis de datos
+Para ello debemos generar un ejecutable usando el código de extensión .l
 
-Los pasos para crearel ejecutable en base al archivo lex son:
+Los pasos para compilar y ejecutar el programa en base al archivo lex son:
 ```
 $ lex proyecto.l
 $ gcc lex.yy.c -o proyecto -ll
 $ ./proyecto prueba.txt
 ```
 
-Y finalmente nos devolverá el resultado.  
+Y finalmente nos devolverá el resultado.
 
 ![Alt Text](https://github.com/terceranexus6/proyecto_lex/blob/master/images/capt.jpg)
 
-##NUEVO: SCRIPT
-He añadido recientemente un script que realiza la captura y muestra el resultado solo. 
+### 2.3. NUEVO: SCRIPT
+He añadido recientemente un script que realiza la captura y muestra el resultado solo.
 
 ```
 $ sudo ./captura.sh
 ```
 También tenemos la opción de sniffeo rápido, para una catura más limitada de datos.
-``` 
+```
 $ sudo ./sniffeo_rapido.sh
-``` 
-> IMPORTANTE: Para que funcione debe realizarse la compilación del código, y el ejecutable debe llamarse proyecto. (las dos primeras líneas de código del paso 3)
+```
+> IMPORTANTE: Para que funcione debe haberse realizado la compilación del código Lex y el ejecutable debe llamarse 'proyecto'
 
 
-## Extra: Concepto de Sniffing, tipos de paquetes y Protocolos. 
+## 3. Extra: Concepto de Sniffing, tipos de paquetes y protocolos
 
-##1.Sniffing
-Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. Ésto es “escuchar” las diversas comunicaciones que se establecen entre ordenadores a través de una red (física o inalámbrica) sin necesidad de acceder física ni virtualmente a su ordenador.
+### 3.1. Sniffing
+Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. El Sniffing permite “escuchar” las diversas comunicaciones que se establecen entre ordenadores a través de una red (física o inalámbrica) sin necesidad de acceder física ni virtualmente a su ordenador.
 
-##2.Paquetes 
+### 3.2. Paquetes
 Los tipos de paquetes posibles son:
-S = SYN (petición de conexión)
-A = ACK (anterior paquete recibido)
-P = PUSH 
-R = RESET (conexión cortada abruptamente)
-F = FIN (conexión cortada de forma normal)
-U = URGENT 
 
-##3.Protocolos
+| Abreviatura | Descripción |
+|----|--
+| S | SYN (petición de conexión) |
+| A | ACK (anterior paquete recibido) |
+| P | PUSH |
+| R | RESET (conexión cortada abruptamente) |
+| F | FIN (conexión cortada de forma normal) |
+| U | URGENT |
+
+### 3.3. Protocolos
 Encontraremos dos protocolos: TCP y UDP
 
 1. UDP
