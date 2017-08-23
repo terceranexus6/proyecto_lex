@@ -44,10 +44,10 @@ Usaremos los datos de ettercap que consigamos durante el tiempo que queramos, pa
 $ sudo ettercap -T -i wlan0 > prueba.txt
 ```
 
-### 2.2. Análisis de datos
-Para ello debemos generar un ejecutable con el codigo de extensión .l
+### 2.2. Compilación y análisis de datos
+Para ello debemos generar un ejecutable usando el código de extensión .l
 
-Los pasos para crear el ejecutable en base al archivo lex son:
+Los pasos para compilar y ejecutar el programa en base al archivo lex son:
 ```
 $ lex proyecto.l
 $ gcc lex.yy.c -o proyecto -ll
@@ -68,21 +68,27 @@ También tenemos la opción de sniffeo rápido, para una catura más limitada de
 ```
 $ sudo ./sniffeo_rapido.sh
 ```
-> IMPORTANTE: Para que funcione debe realizarse la compilación del código, y el ejecutable debe llamarse proyecto. (las dos primeras líneas de código del paso 3)
+> IMPORTANTE: Para que funcione debe haberse realizado la compilación del código y el ejecutable debe llamarse 'proyecto'
 
 
 ## 3. Extra: Concepto de Sniffing, tipos de paquetes y Protocolos.
 
 ### 3.1. Sniffing
-Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. El Sniffing es “escuchar” las diversas comunicaciones que se establecen entre ordenadores a través de una red (física o inalámbrica) sin necesidad de acceder física ni virtualmente a su ordenador.
+Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. El Sniffing permite “escuchar” las diversas comunicaciones que se establecen entre ordenadores a través de una red (física o inalámbrica) sin necesidad de acceder física ni virtualmente a su ordenador.
 
 ### 3.2. Paquetes
 Los tipos de paquetes posibles son:
+
 S = SYN (petición de conexión)
+
 A = ACK (anterior paquete recibido)
+
 P = PUSH
+
 R = RESET (conexión cortada abruptamente)
+
 F = FIN (conexión cortada de forma normal)
+
 U = URGENT
 
 ### 3.3. Protocolos
