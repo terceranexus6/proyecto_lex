@@ -68,10 +68,10 @@ También tenemos la opción de sniffeo rápido, para una catura más limitada de
 ```
 $ sudo ./sniffeo_rapido.sh
 ```
-> IMPORTANTE: Para que funcione debe haberse realizado la compilación del código y el ejecutable debe llamarse 'proyecto'
+> IMPORTANTE: Para que funcione debe haberse realizado la compilación del código Lex y el ejecutable debe llamarse 'proyecto'
 
 
-## 3. Extra: Concepto de Sniffing, tipos de paquetes y Protocolos.
+## 3. Extra: Concepto de Sniffing, tipos de paquetes y protocolos
 
 ### 3.1. Sniffing
 Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. El Sniffing permite “escuchar” las diversas comunicaciones que se establecen entre ordenadores a través de una red (física o inalámbrica) sin necesidad de acceder física ni virtualmente a su ordenador.

@@ -125,21 +125,21 @@ resto    (.|\n)
 
                 	switch(num_expresion){
                 		case 1:
-                			printf("\nNumero de veces que sale protocolo TCP:\n");
+                			printf("\nNúmero de veces que sale protocolo TCP:\n");
                 				printf("\t%i\n",tcpc);
-                      printf("\nNumero de veces que sale protocolo UDP:\n ");
+                      printf("\nNúmero de veces que sale protocolo UDP:\n");
                         printf("\t%i\n",udpc);
-                        printf("\nPeticion standard UPnP :\n ");
+                        printf("\nPetición standard UPnP:\n ");
                           printf("\t%i\n",petc);
 
-                      printf("\nNumero de veces que sale paquete tipo A(ck)S(yn):\n ");
+                      printf("\nNúmero de veces que sale paquete tipo A(ck)S(yn):\n");
                         printf("\t%i\n",asc);
 
-                        printf("\nNumero de veces que sale paquete tipo A(ck)P(ush):\n ");
+                        printf("\nNúmero de veces que sale paquete tipo A(ck)P(ush):\n");
                           printf("\t%i\n",apc);
                           break;
                 		case 2:
-                			printf("\nIP encontrados:\n");
+                			printf("\nIPs encontradas:\n");
                 			for (i=0;i<cip;i++)
                 				printf("\t%s\n",ip[i]);
                 		  	break;
@@ -156,12 +156,12 @@ resto    (.|\n)
                       break;
 
                     case 5:
-                      printf("\nnumero de IPs capturadas:\n");
+                      printf("\nNúmero de IPs capturadas:\n");
                       printf("\t%i\n",con2);
                       break;
 
                     case 6:
-                      printf("\notros datos de interés:\n\n");
+                      printf("\nOtros datos de interés:\n\n");
                       for (i=0;i<cfechas;i++)
                       {
                         printf("\t%s\n",fechas[i]);
