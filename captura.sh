@@ -3,7 +3,6 @@
 
 echo "Guardando datos de sniffeo "
 
-touch loquesea.txt
 ettercap -T -i wlan0 > sniffeo.txt &
 
 echo -ne '[->                        ]  '
@@ -41,7 +40,7 @@ echo "Guardando datos de sniffeo"
 echo -ne '[------------------------->]'
 echo " "
 
-echo "escaneo completo"
+echo "Escaneo completo"
 kill $!
 
 ./proyecto sniffeo.txt
