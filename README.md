@@ -79,6 +79,8 @@ Los datos recogidos y analizados son posibles gracias a algo llamado Sniffing. E
 ### 3.2. Paquetes
 Los tipos de paquetes posibles son:
 
+| Abreviatura | Descripción |
+|----|--
 | S | SYN (petición de conexión) |
 | A | ACK (anterior paquete recibido) |
 | P | PUSH |
